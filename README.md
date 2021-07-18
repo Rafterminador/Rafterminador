@@ -3,4 +3,4 @@
 ### Github Streaks
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=Rafterminador&theme=dark" width="48%" >
 ### Top Languages
- ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Rafterminador&layout=compact)
+ <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rafterminador&layout=compact">
