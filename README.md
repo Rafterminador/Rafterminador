@@ -18,4 +18,6 @@
 <img src="https://img.shields.io/badge/-NodeJs-648c1d?logo=git&logoColor=white&style=flat"/>
 <img src="https://img.shields.io/badge/-Python-3a5f7c?logo=Python&logoColor=white&style=flat"/>
 <img src="https://img.shields.io/badge/-Java-e41819?logo=Java&logoColor=white&style=flat"/>
-<img src="https://img.shields.io/badge/-MySQL-244a64?logo=MySQL&logoColor=white&style=flat"/></p>
+<img src="https://img.shields.io/badge/-MySQL-244a64?logo=MySQL&logoColor=white&style=flat"/>
+<img src="https://img.shields.io/badge/-React-2D2D2D?logo=React&logoColor=00D8FF&style=flat"/>
+</p>
