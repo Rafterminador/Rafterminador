@@ -12,7 +12,7 @@
 
 <div align="center">
 
-💻 &nbsp;Computer & Systems Engineering student<br/>
+💻 &nbsp;Computer Science & Information Systems Engineer<br/>
 ⚡ &nbsp;Building web apps, cloud pipelines, and AI-powered tools<br/>
 🤖 &nbsp;Currently exploring Claude, MCP servers, and local LLMs (Qwen, OpenLLAMA)<br/>
 💬 &nbsp;Ask me about: **React · Spring Boot · AWS · Claude API**<br/><br/>
