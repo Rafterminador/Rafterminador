@@ -1,0 +1,374 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="800" height="320">
+  <defs>
+    <linearGradient id="spacebg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050510"/>
+      <stop offset="100%" stop-color="#0d0d2b"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      /* Stars */
+      .s1{animation:tw1 2.1s ease-in-out infinite alternate;}
+      .s2{animation:tw1 3.3s ease-in-out infinite alternate;}
+      .s3{animation:tw1 1.7s ease-in-out infinite alternate;}
+      .s4{animation:tw1 2.8s ease-in-out infinite alternate;}
+      .s5{animation:tw1 1.4s ease-in-out infinite alternate;}
+      @keyframes tw1{from{opacity:.1}to{opacity:1}}
+
+      /* Typing (programmer hands move) */
+      .hands{animation:type 0.25s ease-in-out infinite alternate;}
+      @keyframes type{from{transform:translateY(0px)}to{transform:translateY(2px)}}
+
+      /* Code lines on screen */
+      .cl1{animation:codeline 5s 0s infinite;}
+      .cl2{animation:codeline 5s 0.6s infinite;}
+      .cl3{animation:codeline 5s 1.2s infinite;}
+      .cl4{animation:codeline 5s 1.8s infinite;}
+      .cl5{animation:codeline 5s 2.4s infinite;}
+      @keyframes codeline{0%{opacity:0}5%{opacity:1}85%{opacity:1}100%{opacity:0}}
+
+      /* Cursor blink */
+      .cur{animation:blink 0.9s infinite;}
+      @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+      /* Rocket launch cycle: 0-2s idle, 2-6s launches, 6-7s reset */
+      .rocket{animation:launch 7s 1s infinite;}
+      @keyframes launch{
+        0%{transform:translate(0px,0px);opacity:1}
+        25%{transform:translate(0px,0px);opacity:1}
+        28%{transform:translate(-4px,-8px) rotate(-5deg);opacity:1}
+        55%{transform:translate(-90px,-180px) rotate(-35deg);opacity:1}
+        75%{transform:translate(-160px,-290px) rotate(-50deg);opacity:0}
+        99%{transform:translate(0px,0px);opacity:0}
+        100%{transform:translate(0px,0px);opacity:1}
+      }
+      .flame{animation:flame 0.15s 3s infinite alternate;}
+      @keyframes flame{from{opacity:.6}to{opacity:1}}
+
+      /* Jarvis orb pulse */
+      .jorb{animation:jpulse 1.8s ease-in-out infinite alternate;}
+      @keyframes jpulse{from{r:20;opacity:.8}to{r:23;opacity:1}}
+      .jring1{animation:jrot 4s linear infinite;transform-origin:638px 210px;}
+      .jring2{animation:jrot2 3s linear infinite;transform-origin:638px 210px;}
+      @keyframes jrot{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+      @keyframes jrot2{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
+      .jdot{animation:jblink 1.2s infinite alternate;}
+      @keyframes jblink{from{fill:#00ffff}to{fill:#0088ff}}
+
+      /* Data stream dots (Jarvis → programmer) */
+      .ds1{animation:stream 2s 0s linear infinite;}
+      .ds2{animation:stream 2s 0.4s linear infinite;}
+      .ds3{animation:stream 2s 0.8s linear infinite;}
+      .ds4{animation:stream 2s 1.2s linear infinite;}
+      .ds5{animation:stream 2s 1.6s linear infinite;}
+      @keyframes stream{
+        0%{transform:translateX(0px);opacity:0}
+        10%{opacity:.8}
+        90%{opacity:.8}
+        100%{transform:translateX(-140px);opacity:0}
+      }
+
+      /* Moon glow pulse */
+      .mglow{animation:moonpulse 3s ease-in-out infinite alternate;}
+      @keyframes moonpulse{from{opacity:.15}to{opacity:.4}}
+
+      /* Screen flicker */
+      .scr{animation:sflicker 10s infinite;}
+      @keyframes sflicker{0%,89%,91%,100%{opacity:1}90%{opacity:.7}}
+    </style>
+  </defs>
+
+  <!-- ── BACKGROUND ── -->
+  <rect width="800" height="320" fill="url(#spacebg)"/>
+
+  <!-- ── STARS (dots = puntitos) ── -->
+  <!-- small 2x2 -->
+  <rect class="s1" x="18"  y="12"  width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s3" x="55"  y="28"  width="3" height="3" fill="#fff" rx="1"/>
+  <rect class="s2" x="95"  y="8"   width="2" height="2" fill="#aaf" rx="1"/>
+  <rect class="s4" x="130" y="40"  width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s1" x="175" y="18"  width="3" height="3" fill="#fff" rx="1"/>
+  <rect class="s5" x="220" y="35"  width="2" height="2" fill="#faa" rx="1"/>
+  <rect class="s2" x="255" y="10"  width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s3" x="310" y="25"  width="3" height="3" fill="#fff" rx="1"/>
+  <rect class="s4" x="360" y="14"  width="2" height="2" fill="#aaf" rx="1"/>
+  <rect class="s1" x="405" y="38"  width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s5" x="450" y="8"   width="3" height="3" fill="#fff" rx="1"/>
+  <rect class="s2" x="500" y="30"  width="2" height="2" fill="#aff" rx="1"/>
+  <rect class="s3" x="545" y="15"  width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s1" x="590" y="42"  width="3" height="3" fill="#fff" rx="1"/>
+  <rect class="s4" x="760" y="22"  width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s5" x="790" y="12"  width="2" height="2" fill="#aaf" rx="1"/>
+  <!-- row 2 -->
+  <rect class="s3" x="40"  y="65"  width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s1" x="85"  y="75"  width="3" height="3" fill="#faa" rx="1"/>
+  <rect class="s4" x="150" y="58"  width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s2" x="195" y="80"  width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s5" x="245" y="70"  width="3" height="3" fill="#aaf" rx="1"/>
+  <rect class="s1" x="330" y="88"  width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s3" x="380" y="62"  width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s2" x="435" y="78"  width="3" height="3" fill="#fff" rx="1"/>
+  <rect class="s4" x="480" y="55"  width="2" height="2" fill="#aff" rx="1"/>
+  <rect class="s5" x="525" y="82"  width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s1" x="570" y="68"  width="3" height="3" fill="#fff" rx="1"/>
+  <rect class="s3" x="745" y="60"  width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s2" x="775" y="75"  width="3" height="3" fill="#faa" rx="1"/>
+  <!-- row 3 -->
+  <rect class="s2" x="22"  y="115" width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s5" x="70"  y="125" width="3" height="3" fill="#fff" rx="1"/>
+  <rect class="s1" x="115" y="108" width="2" height="2" fill="#aaf" rx="1"/>
+  <rect class="s3" x="165" y="135" width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s4" x="438" y="115" width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s2" x="485" y="100" width="3" height="3" fill="#aaf" rx="1"/>
+  <rect class="s1" x="530" y="128" width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s5" x="750" y="110" width="2" height="2" fill="#fff" rx="1"/>
+  <rect class="s3" x="785" y="100" width="3" height="3" fill="#fff" rx="1"/>
+
+  <!-- ── MOON ── -->
+  <circle class="mglow" cx="710" cy="72" r="55" fill="#d8d0b0" opacity=".15"/>
+  <circle cx="710" cy="72" r="44" fill="#e8e0c4"/>
+  <!-- craters (dots) -->
+  <circle cx="695" cy="60" r="9"  fill="#c8b890" opacity=".9"/>
+  <circle cx="720" cy="82" r="6"  fill="#c8b890" opacity=".9"/>
+  <circle cx="700" cy="88" r="4"  fill="#c0b080" opacity=".9"/>
+  <circle cx="728" cy="56" r="7"  fill="#c8b890" opacity=".9"/>
+  <circle cx="705" cy="72" r="3"  fill="#c0b080" opacity=".8"/>
+
+  <!-- ── FLOOR ── -->
+  <rect x="0"   y="272" width="800" height="48" fill="#12122e"/>
+  <rect x="0"   y="270" width="800" height="4"  fill="#2222aa" opacity=".4"/>
+
+  <!-- ── DESK ── -->
+  <rect x="120" y="238" width="420" height="8"  fill="#3d2b1f" rx="2"/>
+  <rect x="130" y="246" width="10"  height="28" fill="#2d1b0f"/>
+  <rect x="520" y="246" width="10"  height="28" fill="#2d1b0f"/>
+
+  <!-- ── MONITOR ── -->
+  <!-- stand -->
+  <rect x="284" y="228" width="8"  height="12" fill="#555"/>
+  <rect x="268" y="237" width="40" height="4"  fill="#444" rx="1"/>
+  <!-- outer shell -->
+  <rect x="195" y="148" width="175" height="92" fill="#1a1a1a" rx="5"/>
+  <!-- screen -->
+  <rect class="scr" x="200" y="153" width="165" height="82" fill="#001800" rx="3"/>
+
+  <!-- code lines (pixel bars = puntitos) -->
+  <!-- green keyword -->
+  <g class="cl1"><rect x="207" y="160" width="50" height="4" fill="#22cc44" rx="1"/></g>
+  <!-- cyan function name -->
+  <g class="cl2">
+    <rect x="207" y="168" width="18" height="4" fill="#22aaff" rx="1"/>
+    <rect x="228" y="168" width="38" height="4" fill="#88ffaa" rx="1"/>
+    <rect x="269" y="168" width="15" height="4" fill="#ffaa44" rx="1"/>
+  </g>
+  <!-- orange param -->
+  <g class="cl3">
+    <rect x="213" y="176" width="30" height="4" fill="#ff6622" rx="1"/>
+    <rect x="246" y="176" width="45" height="4" fill="#22cc44" rx="1"/>
+  </g>
+  <!-- blue return -->
+  <g class="cl4">
+    <rect x="213" y="184" width="40" height="4" fill="#22aaff" rx="1"/>
+    <rect x="256" y="184" width="28" height="4" fill="#88ffaa" rx="1"/>
+  </g>
+  <!-- closing brace -->
+  <g class="cl5"><rect x="207" y="192" width="10" height="4" fill="#ffaa44" rx="1"/></g>
+  <!-- cursor -->
+  <rect class="cur" x="207" y="210" width="5" height="8" fill="#22ff44"/>
+
+  <!-- ── ROCKET (pixel art, launched from screen) ── -->
+  <g class="rocket" transform="translate(340,155)">
+    <!-- nose -->
+    <rect x="5"  y="0"  width="5" height="5" fill="#ff3333" rx="1"/>
+    <rect x="3"  y="5"  width="9" height="5" fill="#ff5555" rx="1"/>
+    <!-- body -->
+    <rect x="2"  y="10" width="11" height="15" fill="#ccccdd"/>
+    <!-- window -->
+    <rect x="4"  y="13" width="7"  height="5"  fill="#44aaff" rx="1"/>
+    <!-- fins -->
+    <rect x="-2" y="20" width="4" height="5" fill="#aaaacc"/>
+    <rect x="13" y="20" width="4" height="5" fill="#aaaacc"/>
+    <!-- exhaust base -->
+    <rect x="2"  y="25" width="11" height="3" fill="#888899"/>
+    <!-- flame -->
+    <rect class="flame" x="4"  y="28" width="3" height="4" fill="#ff8800"/>
+    <rect class="flame" x="8"  y="28" width="3" height="4" fill="#ffcc00"/>
+    <rect class="flame" x="3"  y="31" width="9" height="3" fill="#ff6600" opacity=".7"/>
+  </g>
+
+  <!-- ── PROGRAMMER PIXEL ART (5px grid) ── -->
+  <!-- Each rect = 1 "pixel dot" -->
+
+  <!-- === HAIR (dark brown) === -->
+  <rect x="377" y="145" width="5" height="5" fill="#1e1008"/>
+  <rect x="382" y="145" width="5" height="5" fill="#1e1008"/>
+  <rect x="387" y="145" width="5" height="5" fill="#1e1008"/>
+  <rect x="392" y="145" width="5" height="5" fill="#1e1008"/>
+  <rect x="397" y="145" width="5" height="5" fill="#1e1008"/>
+  <rect x="402" y="145" width="5" height="5" fill="#1e1008"/>
+  <rect x="377" y="150" width="5" height="5" fill="#2a1a0a"/>
+  <rect x="402" y="150" width="5" height="5" fill="#2a1a0a"/>
+
+  <!-- === HEAD (skin tone) === -->
+  <rect x="382" y="150" width="5" height="5" fill="#c89060"/>
+  <rect x="387" y="150" width="5" height="5" fill="#c89060"/>
+  <rect x="392" y="150" width="5" height="5" fill="#c89060"/>
+  <rect x="397" y="150" width="5" height="5" fill="#c89060"/>
+  <!-- eye row -->
+  <rect x="382" y="155" width="5" height="5" fill="#c89060"/>
+  <rect x="387" y="155" width="5" height="5" fill="#111111"/> <!-- left eye -->
+  <rect x="392" y="155" width="5" height="5" fill="#c89060"/>
+  <rect x="397" y="155" width="5" height="5" fill="#111111"/> <!-- right eye -->
+  <rect x="402" y="155" width="5" height="5" fill="#c89060"/>
+  <!-- glasses -->
+  <rect x="385" y="155" width="6" height="2" fill="#333" opacity=".8"/>
+  <rect x="396" y="155" width="6" height="2" fill="#333" opacity=".8"/>
+  <rect x="391" y="155" width="5" height="2" fill="#555" opacity=".7"/>
+  <!-- mouth row -->
+  <rect x="382" y="160" width="5" height="5" fill="#c89060"/>
+  <rect x="387" y="160" width="5" height="5" fill="#c89060"/>
+  <rect x="392" y="160" width="5" height="5" fill="#a87050"/> <!-- mouth -->
+  <rect x="397" y="160" width="5" height="5" fill="#c89060"/>
+  <rect x="402" y="160" width="5" height="5" fill="#c89060"/>
+
+  <!-- === NECK === -->
+  <rect x="387" y="165" width="5" height="5" fill="#b88050"/>
+  <rect x="392" y="165" width="5" height="5" fill="#b88050"/>
+
+  <!-- === TORSO (hoodie azul) === -->
+  <!-- shoulders -->
+  <rect x="377" y="170" width="5" height="5" fill="#2244aa"/>
+  <rect x="382" y="170" width="5" height="5" fill="#2244aa"/>
+  <rect x="387" y="170" width="5" height="5" fill="#2244aa"/>
+  <rect x="392" y="170" width="5" height="5" fill="#2244aa"/>
+  <rect x="397" y="170" width="5" height="5" fill="#2244aa"/>
+  <rect x="402" y="170" width="5" height="5" fill="#2244aa"/>
+  <rect x="407" y="170" width="5" height="5" fill="#2244aa"/>
+  <!-- row 2 -->
+  <rect x="377" y="175" width="5" height="5" fill="#2244aa"/>
+  <rect x="382" y="175" width="5" height="5" fill="#3355bb"/>
+  <rect x="387" y="175" width="5" height="5" fill="#3355bb"/>
+  <rect x="392" y="175" width="5" height="5" fill="#3355bb"/>
+  <rect x="397" y="175" width="5" height="5" fill="#3355bb"/>
+  <rect x="402" y="175" width="5" height="5" fill="#3355bb"/>
+  <rect x="407" y="175" width="5" height="5" fill="#2244aa"/>
+  <!-- row 3 -->
+  <rect x="382" y="180" width="5" height="5" fill="#3355bb"/>
+  <rect x="387" y="180" width="5" height="5" fill="#3355bb"/>
+  <rect x="392" y="180" width="5" height="5" fill="#3355bb"/>
+  <rect x="397" y="180" width="5" height="5" fill="#3355bb"/>
+  <rect x="402" y="180" width="5" height="5" fill="#3355bb"/>
+  <!-- row 4 waist -->
+  <rect x="382" y="185" width="5" height="5" fill="#2244aa"/>
+  <rect x="387" y="185" width="5" height="5" fill="#2244aa"/>
+  <rect x="392" y="185" width="5" height="5" fill="#2244aa"/>
+  <rect x="397" y="185" width="5" height="5" fill="#2244aa"/>
+  <rect x="402" y="185" width="5" height="5" fill="#2244aa"/>
+  <!-- row 5 -->
+  <rect x="382" y="190" width="5" height="5" fill="#2244aa"/>
+  <rect x="387" y="190" width="5" height="5" fill="#2244aa"/>
+  <rect x="392" y="190" width="5" height="5" fill="#2244aa"/>
+  <rect x="397" y="190" width="5" height="5" fill="#2244aa"/>
+  <rect x="402" y="190" width="5" height="5" fill="#2244aa"/>
+  <!-- row 6 waist/belt -->
+  <rect x="382" y="195" width="5" height="5" fill="#1a1a1a"/>
+  <rect x="387" y="195" width="5" height="5" fill="#2233aa"/>
+  <rect x="392" y="195" width="5" height="5" fill="#2233aa"/>
+  <rect x="397" y="195" width="5" height="5" fill="#2233aa"/>
+  <rect x="402" y="195" width="5" height="5" fill="#1a1a1a"/>
+  <!-- legs (pants) -->
+  <rect x="382" y="200" width="5" height="5" fill="#222244"/>
+  <rect x="387" y="200" width="5" height="5" fill="#222244"/>
+  <rect x="397" y="200" width="5" height="5" fill="#222244"/>
+  <rect x="402" y="200" width="5" height="5" fill="#222244"/>
+  <rect x="382" y="205" width="5" height="5" fill="#222244"/>
+  <rect x="387" y="205" width="5" height="5" fill="#222244"/>
+  <rect x="397" y="205" width="5" height="5" fill="#222244"/>
+  <rect x="402" y="205" width="5" height="5" fill="#222244"/>
+  <!-- shoes -->
+  <rect x="380" y="210" width="10" height="5" fill="#111"/>
+  <rect x="395" y="210" width="10" height="5" fill="#111"/>
+
+  <!-- === LEFT ARM (reaching to keyboard) === -->
+  <rect x="372" y="170" width="5" height="5" fill="#2244aa"/>
+  <rect x="367" y="175" width="5" height="5" fill="#2244aa"/>
+  <rect x="362" y="180" width="5" height="5" fill="#2244aa"/>
+  <!-- left hand -->
+  <g class="hands">
+    <rect x="357" y="185" width="5" height="5" fill="#c89060"/>
+    <rect x="352" y="185" width="5" height="5" fill="#c89060"/>
+  </g>
+
+  <!-- === RIGHT ARM === -->
+  <rect x="412" y="170" width="5" height="5" fill="#2244aa"/>
+  <rect x="417" y="175" width="5" height="5" fill="#2244aa"/>
+  <rect x="422" y="180" width="5" height="5" fill="#2244aa"/>
+  <!-- right hand -->
+  <g class="hands">
+    <rect x="427" y="185" width="5" height="5" fill="#c89060"/>
+    <rect x="432" y="185" width="5" height="5" fill="#c89060"/>
+  </g>
+
+  <!-- === KEYBOARD === -->
+  <rect x="305" y="234" width="135" height="6" fill="#2a2a2a" rx="2"/>
+  <rect x="308" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="314" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="320" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="326" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="332" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="338" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="344" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="350" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="356" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="362" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="368" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="374" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="380" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="386" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="392" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="398" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="404" y="235" width="4" height="4" fill="#3a3a3a" rx="1"/>
+  <rect x="325" y="240" width="65" height="3" fill="#3a3a3a" rx="1"/> <!-- spacebar -->
+
+  <!-- ── JARVIS AI ORB ── -->
+  <!-- outer glow rings -->
+  <circle cx="638" cy="210" r="52" fill="none" stroke="#00aaff" stroke-width="1" opacity=".12"/>
+  <circle cx="638" cy="210" r="46" fill="none" stroke="#00ccff" stroke-width="1" opacity=".18"/>
+  <!-- rotating orbit ring 1 -->
+  <g class="jring1">
+    <ellipse cx="638" cy="210" rx="40" ry="11" fill="none" stroke="#00bbff" stroke-width="2" opacity=".55"/>
+  </g>
+  <!-- rotating orbit ring 2 (slower, other axis) -->
+  <g class="jring2">
+    <ellipse cx="638" cy="210" rx="11" ry="40" fill="none" stroke="#44ffcc" stroke-width="1.5" opacity=".4"/>
+  </g>
+  <!-- core sphere -->
+  <circle class="jorb" cx="638" cy="210" r="20" fill="#001833" stroke="#00aaff" stroke-width="2.5" filter="url(#glow)"/>
+  <circle cx="638" cy="210" r="16" fill="#002244" opacity=".85"/>
+  <!-- face dots inside orb -->
+  <rect class="jdot" x="629" y="204" width="4" height="4" fill="#00ffff" rx="1"/> <!-- eye L -->
+  <rect class="jdot" x="639" y="204" width="4" height="4" fill="#00ffff" rx="1"/> <!-- eye R -->
+  <rect x="630" y="213" width="3" height="2" fill="#00aaff" rx="1"/>
+  <rect x="633" y="215" width="8" height="2" fill="#00aaff" rx="1"/>
+  <rect x="641" y="213" width="3" height="2" fill="#00aaff" rx="1"/>
+  <!-- label -->
+  <text x="638" y="262" text-anchor="middle" font-family="monospace" font-size="9" fill="#00aaff" opacity=".85" letter-spacing="2">JARVIS AI</text>
+
+  <!-- ── DATA STREAM (dots flowing Jarvis → programmer) ── -->
+  <circle class="ds1" cx="580" cy="218" r="2.5" fill="#00ffcc" opacity=".8"/>
+  <circle class="ds2" cx="580" cy="218" r="2"   fill="#00aaff" opacity=".7"/>
+  <circle class="ds3" cx="580" cy="218" r="2.5" fill="#44ffcc" opacity=".8"/>
+  <circle class="ds4" cx="580" cy="218" r="2"   fill="#00ffcc" opacity=".7"/>
+  <circle class="ds5" cx="580" cy="218" r="2.5" fill="#00aaff" opacity=".8"/>
+
+  <!-- ── FOOTER TEXT ── -->
+  <text x="400" y="298" text-anchor="middle" font-family="monospace" font-size="11" fill="#4466cc" opacity=".7" letter-spacing="1">// Building the future, one commit at a time</text>
+  <text x="400" y="312" text-anchor="middle" font-family="monospace" font-size="9"  fill="#2244aa" opacity=".5" letter-spacing="2">FRONTEND · BACKEND · CLOUD · AI</text>
+
+</svg>
